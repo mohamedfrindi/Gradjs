@@ -28,7 +28,7 @@ class GradientGenator {
         // change text
         preview.innerHTML = `
             <div class="code">
-                <span class="code-gr">backround: ${bg}</span>
+                <span class="code-gr">background: ${bg}</span>
             </div>
         `;
     }

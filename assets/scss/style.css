@@ -1,0 +1,422 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bt-rotate: 45deg;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=range] {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+}
+.main .preview {
+  height: 50%;
+  width: 100%;
+  position: relative;
+}
+.main .preview .code {
+  display: inline-flex;
+  padding: 20px 20px;
+  background: rgba(255, 255, 255, 0.322);
+  margin: auto;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+.main .preview .code .code-gr {
+  color: black;
+  font-weight: 400;
+  font-size: 14px;
+  display: block;
+  font-family: sans-serif;
+  -webkit-user-select: all;
+     -moz-user-select: all;
+          user-select: all;
+}
+.main .controls {
+  margin-top: 10px;
+  padding: 30px 30px;
+  width: 100%;
+  font-family: sans-serif;
+}
+.main .controls .left {
+  display: flex;
+  align-items: center;
+}
+.main .controls .left .btns {
+  display: flex;
+}
+.main .controls .right {
+  display: flex;
+  align-items: center;
+}
+.main .controls .btn-ctr {
+  padding: 0px 20px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: rgba(221, 221, 221, 0.8666666667);
+  color: #0096a9;
+  text-transform: capitalize;
+  font-size: 12px;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+.main .controls .btn-ctr i {
+  margin-right: 5px;
+  font-size: 12px;
+}
+.main .controls .btn-ctr.active {
+  background: #0096a9;
+  color: white;
+}
+.main .controls .btn-ctr:first-child {
+  margin-left: 0;
+}
+.main .controls .deg {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+.main .controls .deg input {
+  width: 75px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+  height: 30px;
+  border: 1px solid #ececec;
+  color: gray;
+  position: relative;
+}
+.main .controls .deg input:focus {
+  outline: 0;
+}
+.main .controls .deg .inpt {
+  display: flex;
+  align-items: center;
+}
+.main .controls .deg .inpt span {
+  margin-left: 5px;
+  color: gray;
+  font-size: 12px;
+}
+.main .controls .deg .plain-angle-input.default-input {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  margin: 0;
+  margin-right: 20px;
+}
+.main .controls .deg .plain-angle-input.default-input .angle-input-pivot::before {
+  width: 10px;
+  height: 10px;
+  background: #0096a9;
+  border: 0;
+  right: -5px;
+}
+.main .controls .deg .plain-angle-input.default-input:focus {
+  border-color: #0096a9;
+}
+.main .controls .colors-numb {
+  display: flex;
+  align-items: center;
+  padding: 30px 5px;
+  overflow: auto;
+}
+.main .controls .colors-numb .item {
+  margin-right: 60px;
+  display: block;
+  padding: 10px;
+  position: relative;
+}
+.main .controls .colors-numb .item .item-clr {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.main .controls .colors-numb .item .item-clr label {
+  text-transform: capitalize;
+  color: #0096a9;
+  font-size: 13px;
+  margin-right: 7px;
+  display: flex;
+}
+.main .controls .colors-numb .item .item-clr label i {
+  margin-right: 5px;
+}
+.main .controls .colors-numb .item .item-clr input.inpt {
+  border: 1px solid #ececec;
+  height: 30px;
+  display: flex;
+  padding: 0 5px;
+  width: 107px;
+  color: gray;
+  border-radius: 5px;
+  text-align: center;
+}
+.main .controls .colors-numb .item .item-clr input.inpt:focus {
+  outline: 0;
+}
+.main .controls .colors-numb .item .item-clr input[type=color] {
+  background: #e4e4e4;
+  padding: 1px;
+  border-radius: 5px;
+  width: 45px;
+  height: 29px;
+  margin-left: 7px;
+  border: none;
+}
+.main .controls .colors-numb .item .clr-range {
+  display: flex;
+  align-items: center;
+}
+.main .controls .colors-numb .item .clr-range .inpt {
+  display: flex;
+  align-items: center;
+}
+.main .controls .colors-numb .item .clr-range .inpt span {
+  margin-left: 5px;
+  color: gray;
+  font-size: 12px;
+}
+.main .controls .colors-numb .item .clr-range input[type=number] {
+  width: 55px;
+  text-align: center;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  padding: 0 5px;
+  font-size: 12px;
+  border: 1px solid #ececec;
+  color: gray;
+  position: relative;
+}
+.main .controls .colors-numb .item .clr-range input[type=number]:focus {
+  outline: 0;
+}
+.main .controls .colors-numb .item .clr-range input[type=range] {
+  margin-right: 10px;
+  width: 100%;
+  height: 7px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+.main .controls .colors-numb .item .clr-range input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 7px;
+  height: 12px;
+  border-radius: 3px;
+  background: #0096a9;
+  cursor: pointer;
+}
+.main .controls .colors-numb .item .btn-remove {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: #E91E63;
+  outline: 0;
+  border: 0;
+  transform: translateX(-50%);
+  display: none;
+}
+.main .controls .colors-numb .item .btn-remove i {
+  font-size: 15px;
+  color: white;
+}
+.main .controls .colors-numb .item:hover {
+  background: white;
+  box-shadow: 0px 5px 5px #c7c7c7;
+}
+.main .controls .colors-numb .item:hover .btn-remove {
+  display: block;
+}
+.main .controls .colors-numb .item:last-child {
+  margin-right: 0;
+}
+.main .controls .colors-numb::-webkit-scrollbar {
+  background-color: #f5f5f5;
+  height: 7px;
+}
+.main .controls .colors-numb::-webkit-scrollbar-thumb {
+  background-color: rgba(221, 221, 221, 0.8666666667);
+}
+.main .controls .add-color {
+  color: white;
+  cursor: pointer;
+  margin-left: 30px;
+}
+.main .controls .add-color i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #0096a9;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+}
+.main .controls .examples {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ececec;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+}
+.main .controls .examples .color {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: block;
+  background: #dadada;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.main .controls .examples .color:last-child {
+  margin-right: 0;
+}
+.main .controls .examples .color.active {
+  border: 2px solid #3f51b5;
+}
+
+/*  Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+  .main .preview .code {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    transform: none;
+  }
+  .main .controls .left {
+    margin-bottom: 20px;
+    overflow: auto;
+    padding: 30px 0;
+    border-bottom: 1px solid #ececec;
+  }
+  .main .controls .examples {
+    margin-top: 50px;
+  }
+  .main .controls .examples .color {
+    width: 60px;
+    height: 60px;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .main .preview .code {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    transform: none;
+  }
+  .main .controls .left {
+    margin-bottom: 20px;
+    overflow: auto;
+    padding: 30px 0;
+    border-bottom: 1px solid #ececec;
+  }
+  .main .controls .examples {
+    margin-top: 50px;
+  }
+  .main .controls .examples .color {
+    width: 60px;
+    height: 60px;
+  }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .main .preview .code {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    transform: none;
+  }
+  .main .controls .left {
+    margin-bottom: 20px;
+    overflow: auto;
+    padding: 30px 0;
+    border-bottom: 1px solid #ececec;
+  }
+  .main .controls .examples {
+    margin-top: 50px;
+  }
+  .main .controls .examples .color {
+    width: 60px;
+    height: 60px;
+  }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .main .preview .code {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    transform: none;
+  }
+  .main .controls .left {
+    margin-bottom: 20px;
+    overflow: auto;
+    padding: 30px 0;
+    border-bottom: 1px solid #ececec;
+  }
+  .main .controls .examples {
+    margin-top: 50px;
+  }
+  .main .controls .examples .color {
+    width: 60px;
+    height: 60px;
+  }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .main .preview .code {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    transform: none;
+  }
+  .main .controls .left {
+    margin-bottom: 20px;
+    overflow: auto;
+    padding: 30px 0;
+  }
+  .main .controls .examples {
+    margin-top: 50px;
+  }
+  .main .controls .examples .color {
+    width: 60px;
+    height: 60px;
+  }
+}/*# sourceMappingURL=style.css.map */
